@@ -1,0 +1,24 @@
+
+/* Site wide resets */
+body {
+  margin: 0;
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+
+
+/* Index Page Header */
+.index-header {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: black;
+  color: white;
+}
+
+.header-title {
+  font-size: 48px;
+  font-family: 'Lato', sans-serif;
+}
