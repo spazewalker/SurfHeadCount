@@ -1,0 +1,5 @@
+PIL
+onnxruntime
+opencv-python
+numpy
+flask
