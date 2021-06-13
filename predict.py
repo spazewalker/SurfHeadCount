@@ -6,7 +6,7 @@ import cv2 as cv
 session = onnxruntime.InferenceSession('model.onnx', None)
 input_name = session.get_inputs()[0].name
 
-def predict(img : np.ndarray):
+def predict(img):
     img = np.array(cv.cvtColor(img,cv.COLOR_BGR2RGB),dtype=np.float32)
     cv.normalize(img, img, 0.0, 1.0, cv.NORM_MINMAX)
     img[:,:,0] = (img[:,:,0]-0.485)/0.299

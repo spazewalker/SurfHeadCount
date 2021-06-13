@@ -4,6 +4,18 @@
   <head>
     <title>Surf Head Count App</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script type="text/javascript" src="../static/html2canvas.js"></script>
+
+  <!-- Script -->
+  <script type='text/javascript'>
+    function screenshot(){
+      html2canvas(document.getElementsByClassName('location-video-container')[0]).then(function(canvas) {
+      document.body.appendChild(canvas);
+     });
+     var dataURL = canvas.toDataURL();
+     console.log(dataURL)
+    }
+    </script>
   </head>
 
   <body>
@@ -25,10 +37,13 @@
           <div class="location-video-container">
             <iframe class="location-video" src="https://embed.cdn-surfline.com/cams/5e1544905b0da16d1e6ff526/736d5cbb14a8125f9b0fdfb471286c88f125c3df" frameborder="0" allowfullscreen>
             </iframe>
+            
           </div>
 
         </div>
       </div>
+
+
       
       <!--Column 2: Current Head Count & Refresh -->
       <div class="head-count-section">
@@ -39,11 +54,11 @@
           <p class="head-count-number">
             <!--Insert Computer Vision result here-->
             <!--Just a Placeholder-->
-            25 Surfers
+            {{count}} People
           </p>
           
-          <form class="head-count-refresh" action="/" method="POST">
-            <input type="submit" value="Refresh Count" class="head-count-refresh-button"></input>
+          <form class="head-count-refresh">
+            <input type="submit" value="Refresh Count" class="head-count-refresh-button" onclick='screennchot();'></input>
           </form>
         </div>
         
